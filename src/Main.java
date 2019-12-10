@@ -30,10 +30,10 @@ public class Main {
             //if press Add new
             EducationInfo u=new SchoolInfo();
             u.setSchoolName("sabanj");
-            e.nextEducationInfo(u);
+            e.setNextEducationInfo(u);
 
             // if press next
-            u.nextEducationInfo(null);
+            u.setNextEducationInfo(null);
 
         //PAge 4: (Enter Job Info)
 
@@ -46,6 +46,8 @@ public class Main {
         user.setWorkExperienceInfo(j);
         user.setSkillsInfo(s);
         user.setVolunteerInfo(w);
+
+        user.save();
 
         // Page 6: (Choose CV type)
             ResumeFactory rf= new ResumeFactory();

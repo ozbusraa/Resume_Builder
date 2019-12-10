@@ -11,9 +11,7 @@ public class User implements UserInterface {
     SkillsInfo skillsInfo;
     VolunteerInfo volunteerInfo;
 
-    public void showEducationInfo(){
-        educationInfo.showInfo();
-    }
+
 
     @Override
     public void setChoosenResumeType(String choosenResumeType) {
@@ -43,12 +41,6 @@ public class User implements UserInterface {
     @Override
     public String getChoosenResumeType() {
         return choosenResumeType;
-    }
-
-    @Override
-    public EducationInfo addNewEducationInfo(EducationInfo educationInfo) {
-        EducationInfo e=educationInfo;
-        return e;
     }
 
     public void setEducationInfo(EducationInfo educationInfo) {

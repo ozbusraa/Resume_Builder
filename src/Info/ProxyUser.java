@@ -16,16 +16,7 @@ public class ProxyUser implements UserInterface{
     VolunteerInfo volunteerInfo;
 
 
-    @Override
-    public EducationInfo addNewEducationInfo(EducationInfo educationInfo) {
-        EducationInfo e=educationInfo;
-        return e;
-    }
 
-    @Override
-    public void setNewEducationInfo(EducationInfo educationInfo) {
-        EducationInfo e=addNewEducationInfo(educationInfo);
-    }
 
     @Override
     public void setChoosenResumeType(String choosenResumeType) {
