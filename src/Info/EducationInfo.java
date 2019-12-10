@@ -1,9 +1,11 @@
 package Info;
 
 public interface EducationInfo {
-    String highSchoolName="";
-    String universityName="";
 
-    public void showInfo();
+
+    void setSchoolName(String highSchoolName);
+    EducationInfo nextEducationInfo(EducationInfo educationInfo);
+
+
 }
 

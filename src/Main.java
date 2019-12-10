@@ -7,17 +7,55 @@ public class Main {
 
         //User user=new User();
         UserInterface user=new ProxyUser();
-        ResumeFactory rf= new ResumeFactory();
 
-        Resume resume= rf.produceResume(user.getChoosenResumeType());
-        resume.use();
+
+        // PAge 1: (enter personal info)
+            user.setName("Büşra");
+            user.setEmail("dfsdf");
+            user.setAddress("dslfklks");
+            user.setTelNo("flsdkjfl");
+            // Press save
+
+        //Page 2: (choose infos)
+            // user education,job,projects seçti, skill seçmedi.
+                SkillsInfo s=new noSkillInfo();
+                EducationInfo e=new SchoolInfo();
+                WorkExperienceInfo j=new WorkExperience();
+                VolunteerInfo w= new Volunteer();
+
+        //Page 3: (Enter Education Info)
+
+            e.setSchoolName("Erbakır Fen Lisesi");
+
+            //if press Add new
+            EducationInfo u=new SchoolInfo();
+            u.setSchoolName("sabanj");
+            e.nextEducationInfo(u);
+
+            // if press next
+            u.nextEducationInfo(null);
+
+        //PAge 4: (Enter Job Info)
+
+        //Page 5: (Enter Volunteer)
+
+
 
         // user education,job,projects seçti, skill seçmedi.
-        user.setEducationInfo(new noInfo());
-        user.setEducationInfo(new HighSchoolInfo());
+        user.setEducationInfo(e);
+        user.setWorkExperienceInfo(j);
+        user.setSkillsInfo(s);
+        user.setVolunteerInfo(w);
+
+        // Page 6: (Choose CV type)
+            ResumeFactory rf= new ResumeFactory();
+            Resume resume= rf.produceResume(user.getChoosenResumeType());
+            resume.use();
+
+        // Page 7: (Choose Layout)
 
 
-
+        // PAge 8: (CV)
 
     }
 }

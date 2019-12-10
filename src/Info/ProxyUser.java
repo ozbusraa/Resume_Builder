@@ -17,6 +17,17 @@ public class ProxyUser implements UserInterface{
 
 
     @Override
+    public EducationInfo addNewEducationInfo(EducationInfo educationInfo) {
+        EducationInfo e=educationInfo;
+        return e;
+    }
+
+    @Override
+    public void setNewEducationInfo(EducationInfo educationInfo) {
+        EducationInfo e=addNewEducationInfo(educationInfo);
+    }
+
+    @Override
     public void setChoosenResumeType(String choosenResumeType) {
         this.choosenResumeType = choosenResumeType;
     }
@@ -61,7 +72,16 @@ public class ProxyUser implements UserInterface{
 
     public void save(){
         user=new User();
+        user.setAddress(address);
+        user.setName(name);
+        user.setEmail(email);
+        user.setTelNo(telNo);
+        user.setEducationInfo(educationInfo);
+        user.setSkillsInfo(skillsInfo);
+        user.setVolunteerInfo(volunteerInfo);
+        user.setWorkExperienceInfo(workExperienceInfo);
 
+        user.save();
     }
 }
 

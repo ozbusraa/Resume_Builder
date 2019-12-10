@@ -1,4 +1,5 @@
 package Info;
 
-public class SkillsInfo {
+public interface SkillsInfo {
+
 }

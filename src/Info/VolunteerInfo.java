@@ -1,6 +1,6 @@
 package Info;
 
-public class VolunteerInfo {
+public interface VolunteerInfo {
 
 
 }

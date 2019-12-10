@@ -7,6 +7,8 @@ public interface UserInterface {
     String telNo=null;
     String address=null;
 
+    EducationInfo addNewEducationInfo(EducationInfo educationInfo);
+    void setNewEducationInfo(EducationInfo educationInfo);
     void setChoosenResumeType(String choosenResumeType) ;
     void setName(String name);
     void setEmail(String email);

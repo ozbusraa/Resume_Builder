@@ -45,6 +45,12 @@ public class User implements UserInterface {
         return choosenResumeType;
     }
 
+    @Override
+    public EducationInfo addNewEducationInfo(EducationInfo educationInfo) {
+        EducationInfo e=educationInfo;
+        return e;
+    }
+
     public void setEducationInfo(EducationInfo educationInfo) {
         this.educationInfo = educationInfo;
     }
