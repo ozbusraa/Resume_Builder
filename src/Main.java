@@ -8,8 +8,7 @@ public class Main {
         //User user=new User();
         UserInterface user=new ProxyUser();
 
-
-        // PAge 1: (enter personal info)
+        // Page 1: (enter personal info)
             user.setName("Büşra");
             user.setEmail("dfsdf");
             user.setAddress("dslfklks");
