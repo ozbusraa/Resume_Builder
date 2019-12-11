@@ -1,3 +1,8 @@
+import Info.EducationInfo;
+import Info.ProxyUser;
+import Info.SchoolInfo;
+import Info.UserInterface;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,7 +12,8 @@ public class PersonalInfo extends JFrame {
 
     private JPanel panel;
 
-    public PersonalInfo(){
+
+    public PersonalInfo(UserInterface user){
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JPanel panel = (JPanel) this.getContentPane();
         panel.setLayout(null);
@@ -61,9 +67,25 @@ public class PersonalInfo extends JFrame {
         Dimension size12 = inputAddress.getPreferredSize();
         inputAddress.setBounds(100, 250, size12.width, size12.height);
 
+
         this.setSize(400, 400);
         this.setLocationRelativeTo(null);
         this.setVisible(true);
+
+        button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                user.setName(inputName.getText());
+                user.setLastName(inputSurname.getText());
+                user.setTelNo(inputPhoneNumber.getText());
+                user.setAddress(inputAddress.getText());
+                user.setEmail(inputMail.getText());
+                EducationInfo eI=new SchoolInfo();
+                new EducationalInfo(user,eI).setVisible(true);
+                panel.setVisible(false);
+            }
+        });
 
     }
 }

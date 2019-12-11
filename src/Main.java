@@ -28,11 +28,11 @@ public class Main {
         panel.add(button);
         Dimension size2 = button.getPreferredSize();
         button.setBounds(150, 300, size2.width, size2.height);
-
+        UserInterface user=new ProxyUser();
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new PersonalInfo().setVisible(true);
+                new PersonalInfo(user).setVisible(true);
                 frame.setVisible(false);
             }
         });
@@ -43,7 +43,7 @@ public class Main {
 
 
         //User user=new User();
-        UserInterface user=new ProxyUser();
+        //UserInterface user=new ProxyUser();
 
         // Page 1: (enter personal info)
             user.setName("Büşra");

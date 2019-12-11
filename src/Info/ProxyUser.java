@@ -4,6 +4,7 @@ public class ProxyUser implements UserInterface{
 
     String choosenResumeType;
     String name;
+    String lastName;
     String email;
     String telNo;
     String address;
@@ -15,7 +16,9 @@ public class ProxyUser implements UserInterface{
     SkillsInfo skillsInfo;
     VolunteerInfo volunteerInfo;
 
-
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
 
     @Override

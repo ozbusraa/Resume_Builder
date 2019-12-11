@@ -3,6 +3,7 @@ package Info;
 public class User implements UserInterface {
     String choosenResumeType;
     String name;
+    String lastName;
     String email;
     String telNo;
     String address;
@@ -11,7 +12,9 @@ public class User implements UserInterface {
     SkillsInfo skillsInfo;
     VolunteerInfo volunteerInfo;
 
-
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
     @Override
     public void setChoosenResumeType(String choosenResumeType) {
