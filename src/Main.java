@@ -29,6 +29,8 @@ public class Main {
         Dimension size2 = button.getPreferredSize();
         button.setBounds(150, 300, size2.width, size2.height);
         UserInterface user=new ProxyUser();
+
+
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

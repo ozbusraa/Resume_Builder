@@ -3,6 +3,8 @@ import Info.ProxyUser;
 import Info.SchoolInfo;
 import Info.UserInterface;
 
+import Info.UserInterface;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -81,9 +83,10 @@ public class PersonalInfo extends JFrame {
                 user.setTelNo(inputPhoneNumber.getText());
                 user.setAddress(inputAddress.getText());
                 user.setEmail(inputMail.getText());
-                EducationInfo eI=new SchoolInfo();
-                new EducationalInfo(user,eI).setVisible(true);
-                panel.setVisible(false);
+                //EducationInfo eI=new SchoolInfo();
+                //new EducationalInfo(user,eI).setVisible(true);
+                new ChooseInfo().setVisible(true);
+                dispose();
             }
         });
 
