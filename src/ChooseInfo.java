@@ -1,3 +1,5 @@
+import Info.*;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -6,7 +8,7 @@ import java.awt.event.ActionListener;
 public class ChooseInfo extends JFrame {
     JPanel panel;
 
-    public ChooseInfo(){
+    public ChooseInfo(UserInterface user){
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JPanel panel = (JPanel) this.getContentPane();
         panel.setLayout(null);
@@ -52,9 +54,62 @@ public class ChooseInfo extends JFrame {
         next.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                EducationInfo eI;
+                WorkExperienceInfo j;
+                SkillsInfo s;
+                VolunteerInfo v;
+                Project p;
+                Certificates c;
+                Reference r;
+                Hobbies h;
+                if(education.isSelected()){
+                    eI=new SchoolInfo();
+                }else{
+                    eI=new noSchoolInfo();
+                }
+                if(job.isSelected()){
+                    j=new WorkExperience();
+                }else{
+                    j=new noWorkExperienceInfo();
+                }
+                if(skills.isSelected()){
+                    s=new Skills();
+                }else{
+                    s=new noSkillInfo();
+                }
+                if(volunteer.isSelected()){
+                   v= new Volunteer();
+                }else{
+                   v= new noVolunteerInfo();
+                }
+                if(projects.isSelected()){
+                    p=new ProjectInfo();
+                }else{
+                    p= new noProjectInfo();
+                }
+                if(certificate.isSelected()){
+                    c=new CertificateInfo();
+                }else{
+                    c=new noCertificateInfo();
+                }
+                if(reference.isSelected()){
+                    r=new ReferenceInfo();
+                }else{
+                    r=new noReferenceInfo();
+                }
+                if(hobbies.isSelected()){
+                    h=new HobbiesInfo();
+                }else{
+                    h=new noHobbyInfo();
+                }
 
+
+                new EducationalInfo(user,eI,j,s,v,p,c,r,h).setVisible(true);
                 dispose();
             }
         });
     }
+
+
+
 }

@@ -14,7 +14,6 @@ public class PersonalInfo extends JFrame {
 
     private JPanel panel;
 
-
     public PersonalInfo(UserInterface user){
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JPanel panel = (JPanel) this.getContentPane();
@@ -83,13 +82,14 @@ public class PersonalInfo extends JFrame {
                 user.setTelNo(inputPhoneNumber.getText());
                 user.setAddress(inputAddress.getText());
                 user.setEmail(inputMail.getText());
-                //EducationInfo eI=new SchoolInfo();
-                //new EducationalInfo(user,eI).setVisible(true);
-                new ChooseInfo().setVisible(true);
+
+                new ChooseInfo(user).setVisible(true);
                 dispose();
             }
         });
 
     }
+
+
 }
 

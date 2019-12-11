@@ -1,6 +1,4 @@
-import Info.EducationInfo;
-import Info.SchoolInfo;
-import Info.UserInterface;
+import Info.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,7 +9,7 @@ import java.awt.event.ActionListener;
 
         private JPanel panel;
 
-        public EducationalInfo(UserInterface user,EducationInfo eI){
+        public EducationalInfo(UserInterface user, EducationInfo eI, WorkExperienceInfo j,SkillsInfo s,VolunteerInfo v,Project p,Certificates c,Reference r, Hobbies h){
             this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             JPanel panel = (JPanel) this.getContentPane();
             panel.setLayout(null);
@@ -92,21 +90,9 @@ import java.awt.event.ActionListener;
             Dimension size13 = buttonAddNew.getPreferredSize();
             buttonAddNew.setBounds(100, 300, size13.width, size13.height);
 
-
-
-
-
-
-
-
-
-
-
             this.setSize(400, 400);
             this.setLocationRelativeTo(null);
             this.setVisible(true);
-
-
 
 
             saveButton.addActionListener(new ActionListener() {
@@ -120,8 +106,8 @@ import java.awt.event.ActionListener;
                     eI.setGpa(inputGpa.getText());
                     eI.setNextEducationInfo(null);
 
-                    //new PersonalInfo().setVisible(true);
-                    panel.setVisible(false);
+                    new WorkExperiencePage(user,eI,j,s,v,p,c,r,h).setVisible(true);
+                    dispose();
                 }
             });
 
@@ -129,16 +115,16 @@ import java.awt.event.ActionListener;
                 @Override
                 public void actionPerformed(ActionEvent e) {
 
-                    EducationInfo u=new SchoolInfo();
+                    EducationInfo newEI=new SchoolInfo();
                     eI.setSchoolName(inputSchoolName.getText());
                     eI.setDepartment(inputDepartment.getText());
                     eI.setFinishDate(inputgraduationDate.getText());
                     eI.setStartDate(inputstartDate.getText());
                     eI.setGpa(inputGpa.getText());
-                    eI.setNextEducationInfo(u);
+                    eI.setNextEducationInfo(newEI);
 
-                    new EducationalInfo(user,u).setVisible(true);
-                    panel.setVisible(false);
+                    new EducationalInfo(user,newEI,j,s,v,p,c,r,h).setVisible(true);
+                    dispose();
                 }
             });
 
@@ -148,6 +134,8 @@ import java.awt.event.ActionListener;
 
 
         }
+
+
     }
 
 
