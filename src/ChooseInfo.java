@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public class ChooseInfo extends JFrame {
     JPanel panel;
@@ -62,49 +64,69 @@ public class ChooseInfo extends JFrame {
                 Certificates c;
                 Reference r;
                 Hobbies h;
+               // ArrayList<Integer> array= new ArrayList<Integer>(8);
+                Boolean[] array = new Boolean[8];
                 if(education.isSelected()){
                     eI=new SchoolInfo();
+                    array[0] = Boolean.TRUE;
+
                 }else{
                     eI=new noSchoolInfo();
+                    array[0] =Boolean.FALSE;
                 }
                 if(job.isSelected()){
                     j=new WorkExperience();
+                    array[1] = Boolean.TRUE;
                 }else{
                     j=new noWorkExperienceInfo();
+                    array[1] = Boolean.FALSE;
                 }
                 if(skills.isSelected()){
                     s=new Skills();
+                    array[2] = Boolean.TRUE;
                 }else{
                     s=new noSkillInfo();
+                    array[2] = Boolean.FALSE;
                 }
                 if(volunteer.isSelected()){
                    v= new Volunteer();
+                    array[5] = Boolean.TRUE;
                 }else{
                    v= new noVolunteerInfo();
+                    array[5] = Boolean.FALSE;
                 }
                 if(projects.isSelected()){
                     p=new ProjectInfo();
+                    array[3] = Boolean.TRUE;
                 }else{
                     p= new noProjectInfo();
+                    array[3] = Boolean.FALSE;
                 }
                 if(certificate.isSelected()){
                     c=new CertificateInfo();
+                    array[6] = Boolean.TRUE;
                 }else{
                     c=new noCertificateInfo();
+                    array[6] = Boolean.FALSE;
                 }
                 if(reference.isSelected()){
                     r=new ReferenceInfo();
+                    array[7] = Boolean.TRUE;
                 }else{
                     r=new noReferenceInfo();
+                    array[7] = Boolean.FALSE;
                 }
                 if(hobbies.isSelected()){
                     h=new HobbiesInfo();
+                    array[4] = Boolean.TRUE;
                 }else{
                     h=new noHobbyInfo();
+                    array[4] = Boolean.FALSE;
                 }
 
+                new EducationalInfo(user,eI,j,s,v,p,c,r,h,array);
 
-                new EducationalInfo(user,eI,j,s,v,p,c,r,h).setVisible(true);
+
                 dispose();
             }
         });

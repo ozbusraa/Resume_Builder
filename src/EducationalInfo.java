@@ -5,11 +5,13 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-    public class EducationalInfo extends JFrame {
+public class EducationalInfo extends JFrame {
 
         private JPanel panel;
 
-        public EducationalInfo(UserInterface user, EducationInfo eI, WorkExperienceInfo j,SkillsInfo s,VolunteerInfo v,Project p,Certificates c,Reference r, Hobbies h){
+        public EducationalInfo(UserInterface user, EducationInfo eI, WorkExperienceInfo j, SkillsInfo s, VolunteerInfo v, Project p, Certificates c, Reference r, Hobbies h, Boolean[] array){
+            this.setVisible(array[0]);
+            if(array[0]==Boolean.FALSE){new WorkExperiencePage(user,eI,j,s,v,p,c,r,h,array);}
             this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             JPanel panel = (JPanel) this.getContentPane();
             panel.setLayout(null);
@@ -92,7 +94,7 @@ import java.awt.event.ActionListener;
 
             this.setSize(400, 400);
             this.setLocationRelativeTo(null);
-            this.setVisible(true);
+          //  this.setVisible(true);
 
 
             saveButton.addActionListener(new ActionListener() {
@@ -106,7 +108,7 @@ import java.awt.event.ActionListener;
                     eI.setGpa(inputGpa.getText());
                     eI.setNextEducationInfo(null);
 
-                    new WorkExperiencePage(user,eI,j,s,v,p,c,r,h).setVisible(true);
+                    new WorkExperiencePage(user,eI,j,s,v,p,c,r,h,array);
                     dispose();
                 }
             });
@@ -123,7 +125,7 @@ import java.awt.event.ActionListener;
                     eI.setGpa(inputGpa.getText());
                     eI.setNextEducationInfo(newEI);
 
-                    new EducationalInfo(user,newEI,j,s,v,p,c,r,h).setVisible(true);
+                    new EducationalInfo(user,newEI,j,s,v,p,c,r,h,array);
                     dispose();
                 }
             });

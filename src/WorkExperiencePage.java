@@ -10,7 +10,10 @@ public class WorkExperiencePage extends JFrame {
 
     private JPanel panel;
 
-    public WorkExperiencePage(UserInterface user, EducationInfo eI, WorkExperienceInfo j, SkillsInfo s, VolunteerInfo v, Project p, Certificates c, Reference r, Hobbies h){
+    public WorkExperiencePage(UserInterface user, EducationInfo eI, WorkExperienceInfo j, SkillsInfo s, VolunteerInfo v, Project p, Certificates c, Reference r, Hobbies h,Boolean[] array){
+        this.setVisible(array[1]);
+        if(array[1]==Boolean.FALSE){new WorkExperiencePage(user,eI,j,s,v,p,c,r,h,array);}
+
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JPanel panel = (JPanel) this.getContentPane();
         panel.setLayout(null);
@@ -93,7 +96,7 @@ public class WorkExperiencePage extends JFrame {
 
         this.setSize(400, 400);
         this.setLocationRelativeTo(null);
-        this.setVisible(true);
+     //   this.setVisible(true);
 
 
         saveButton.addActionListener(new ActionListener() {
@@ -125,7 +128,7 @@ public class WorkExperiencePage extends JFrame {
                 j.setDescription(inputDescription.getText());
                 j.setNextWorkExperience(newJ);
 
-                new WorkExperiencePage(user,eI,newJ,s,v,p,c,r,h).setVisible(true);
+                new WorkExperiencePage(user,eI,newJ,s,v,p,c,r,h,array);
                 dispose();
             }
         });
