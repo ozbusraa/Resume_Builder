@@ -110,7 +110,7 @@ public class WorkExperiencePage extends JFrame {
                 j.setDescription(inputDescription.getText());
                 j.setNextWorkExperience(null);
 
-                //new PersonalInfo().setVisible(true);
+                new ProjectsPage(user,eI,j,s,v,p,c,r,h,array).setVisible(true);
                 dispose();
             }
         });

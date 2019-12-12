@@ -25,10 +25,10 @@ public class ChooseInfo extends JFrame {
         education.setBounds(50,100, 150,25);
         JCheckBox job = new JCheckBox("Job");
         job.setBounds(50,125, 50,25);
-        JCheckBox skills = new JCheckBox("Skills");
-        skills.setBounds(50,150, 75,25);
         JCheckBox projects = new JCheckBox("Projects");
-        projects.setBounds(50,175, 100,25);
+        projects.setBounds(50,150, 75,25);
+        JCheckBox skills = new JCheckBox("Skills");
+        skills.setBounds(50,175, 100,25);
         JCheckBox hobbies = new JCheckBox("Hobbies");
         hobbies.setBounds(50,200, 150,25);
         JCheckBox volunteer = new JCheckBox("Volunteer Works");
