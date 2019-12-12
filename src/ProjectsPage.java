@@ -9,6 +9,8 @@ public class ProjectsPage extends JFrame{
     private JPanel panel;
 
     public ProjectsPage(UserInterface user, EducationInfo eI, WorkExperienceInfo j, SkillsInfo s, VolunteerInfo v, Project p, Certificates c, Reference r, Hobbies h,Boolean[] array){
+        this.setVisible(array[3]);
+        if(array[3]==Boolean.FALSE){new HobbiesPage(user,eI,j,s,v,p,c,r,h,array);}
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JPanel panel = (JPanel) getContentPane();
@@ -53,11 +55,26 @@ public class ProjectsPage extends JFrame{
         saveButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
-                new HobbiesPage(user,eI,j,s,v,p,c,r,h,array).setVisible(true);
+                p.setDescription(inputDescription.getText());
+                p.setProjectName(inputName.getText());
+                p.setNextProject(null);
+                new HobbiesPage(user,eI,j,s,v,p,c,r,h,array);
                 dispose();
             }
         });
 
+        buttonAddNew.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                Project newP=new ProjectInfo();
+                p.setDescription(inputDescription.getText());
+                p.setProjectName(inputName.getText());
+                p.setNextProject(newP);
+
+                new ProjectsPage(user,eI,j,s,v,newP,c,r,h,array);
+                dispose();
+            }
+        });
     }
 }

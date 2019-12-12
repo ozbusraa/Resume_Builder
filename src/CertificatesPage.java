@@ -1,5 +1,3 @@
-package Resume;
-
 import Info.*;
 
 import javax.swing.*;
@@ -11,6 +9,10 @@ public class CertificatesPage extends JFrame {
     private JPanel panel;
 
     public CertificatesPage(UserInterface user, EducationInfo eI, WorkExperienceInfo j, SkillsInfo s, VolunteerInfo v, Project p, Certificates c, Reference r, Hobbies h, Boolean[] array){
+        this.setVisible(array[6]);
+        if(array[6]==Boolean.FALSE){
+            new ReferencePage(user,eI,j,s,v,p,c,r,h,array);
+        }
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JPanel panel = (JPanel) getContentPane();
         panel.setLayout(null);
@@ -30,12 +32,14 @@ public class CertificatesPage extends JFrame {
         JTextField inputName = new JTextField(15);
         Dimension size5 = inputName.getPreferredSize();
         inputName.setBounds(150, 100, size5.width, size5.height);
+
         JTextField inputDate = new JTextField(15);
         Dimension size6 = inputDate.getPreferredSize();
         inputDate.setBounds(150, 150, size6.width, size6.height);
+
         JTextField inputInstitution = new JTextField(15);
         Dimension size7 = inputInstitution.getPreferredSize();
-        inputDate.setBounds(150, 200, size7.width, size7.height);
+        inputInstitution.setBounds(150, 200, size7.width, size7.height);
 
 
         JButton saveButton = new JButton("Save");
@@ -62,8 +66,29 @@ public class CertificatesPage extends JFrame {
         saveButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+            c.setCertificateName(inputName.getText());
+            c.setGivenOrganisation(inputInstitution.getText());
+            c.setYear(inputDate.getText());
+            c.setNextCertificate(null);
 
+                new ReferencePage(user,eI,j,s,v,p,c,r,h,array);
+                dispose();
+            }
+        });
 
+        buttonAddNew.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                Certificates newC=new CertificateInfo();
+
+                c.setCertificateName(inputName.getText());
+                c.setGivenOrganisation(inputInstitution.getText());
+                c.setYear(inputDate.getText());
+                c.setNextCertificate(newC);
+
+                new CertificatesPage(user,eI,j,s,v,p,newC,r,h,array);
+                dispose();
             }
         });
     }
