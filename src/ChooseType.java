@@ -40,7 +40,6 @@ public class ChooseType extends JFrame {
         Dimension size1 = saveButton.getPreferredSize();
         saveButton.setBounds(300, 300, size1.width, size1.height);
 
-
         JButton goBackButton = new JButton("Go Back");
         panel.add(goBackButton);
         Dimension size2 = goBackButton.getPreferredSize();
@@ -49,6 +48,36 @@ public class ChooseType extends JFrame {
         setSize(400, 400);
         setLocationRelativeTo(null);
         setVisible(true);
+
+        saveButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Boolean[] array = new Boolean[3];
+
+                if (!masters.isSelected()&&!internship.isSelected()&&!job.isSelected()){
+                    String message = "Select at least one to go to the next step";
+                    JOptionPane.showMessageDialog(null, message, "Error", JOptionPane.ERROR_MESSAGE);
+                }
+
+                else{
+                    if (masters.isSelected()){
+                        array[0] = Boolean.TRUE;
+                    }
+                    else if (internship.isSelected()){
+                        array[1] = Boolean.TRUE;
+                    }
+                    else if (job.isSelected()){
+                        array[2] = Boolean.TRUE;
+                    }
+
+                    new ChooseLayout(array).setVisible(true);
+                    dispose();
+
+                }
+
+
+            }
+        });
     }
 
 }
