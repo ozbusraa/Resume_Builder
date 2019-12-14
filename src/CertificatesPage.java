@@ -42,7 +42,7 @@ public class CertificatesPage extends JFrame {
         inputInstitution.setBounds(150, 200, size7.width, size7.height);
 
 
-        JButton saveButton = new JButton("Save");
+        JButton saveButton = new JButton("Next");
         panel.add(saveButton);
         Dimension size8 = saveButton.getPreferredSize();
         saveButton.setBounds(300, 300, size8.width, size8.height);
@@ -51,6 +51,11 @@ public class CertificatesPage extends JFrame {
         panel.add(buttonAddNew);
         Dimension size9 = buttonAddNew.getPreferredSize();
         buttonAddNew.setBounds(100, 300, size9.width, size9.height);
+
+        JButton goBackButton = new JButton("Go Back");
+        panel.add(goBackButton);
+        Dimension size14 = goBackButton.getPreferredSize();
+        goBackButton.setBounds(200, 300, size14.width, size14.height);
 
         add(title);
         add(name);

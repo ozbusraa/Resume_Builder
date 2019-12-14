@@ -25,10 +25,15 @@ public class HobbiesPage extends JFrame {
         Dimension size4 = inputHobies.getPreferredSize();
         inputHobies.setBounds(100, 100, size4.width, size4.height);
 
-        JButton saveButton = new JButton("Save");
+        JButton saveButton = new JButton("Next");
         panel.add(saveButton);
         Dimension size6 = saveButton.getPreferredSize();
         saveButton.setBounds(300, 300, size6.width, size6.height);
+
+        JButton goBackButton = new JButton("Go Back");
+        panel.add(goBackButton);
+        Dimension size14 = goBackButton.getPreferredSize();
+        goBackButton.setBounds(200, 300, size14.width, size14.height);
 
 
         add(title);

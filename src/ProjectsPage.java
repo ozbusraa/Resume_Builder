@@ -33,7 +33,7 @@ public class ProjectsPage extends JFrame{
         inputDescription.setBounds(100, 150, size5.width, size5.height);
 
 
-        JButton saveButton = new JButton("Save");
+        JButton saveButton = new JButton("Next");
         panel.add(saveButton);
         Dimension size6 = saveButton.getPreferredSize();
         saveButton.setBounds(300, 300, size6.width, size6.height);
@@ -42,6 +42,11 @@ public class ProjectsPage extends JFrame{
         panel.add(buttonAddNew);
         Dimension size7 = buttonAddNew.getPreferredSize();
         buttonAddNew.setBounds(100, 300, size7.width, size7.height);
+
+        JButton goBackButton = new JButton("Go Back");
+        panel.add(goBackButton);
+        Dimension size14 = goBackButton.getPreferredSize();
+        goBackButton.setBounds(200, 300, size14.width, size14.height);
 
         add(title);
         add(name);

@@ -82,10 +82,15 @@ public class EducationalInfo extends JFrame {
 
 
 
-            JButton saveButton = new JButton("Save");
+            JButton saveButton = new JButton("Next");
             panel.add(saveButton);
             Dimension size7 = saveButton.getPreferredSize();
             saveButton.setBounds(300, 300, size7.width, size7.height);
+
+            JButton goBackButton = new JButton("Go Back");
+            panel.add(goBackButton);
+            Dimension size14 = goBackButton.getPreferredSize();
+            goBackButton.setBounds(200, 300, size14.width, size14.height);
 
             JButton buttonAddNew = new JButton("Add New");
             panel.add(buttonAddNew);
@@ -129,6 +134,8 @@ public class EducationalInfo extends JFrame {
                     dispose();
                 }
             });
+
+
 
 
 

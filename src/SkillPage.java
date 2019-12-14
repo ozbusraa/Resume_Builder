@@ -59,11 +59,15 @@ public class SkillPage extends JFrame {
 
 
 
-        JButton saveButton = new JButton("Save");
+        JButton saveButton = new JButton("Next");
         panel.add(saveButton);
         Dimension size7 = saveButton.getPreferredSize();
         saveButton.setBounds(300, 300, size7.width, size7.height);
 
+        JButton goBackButton = new JButton("Go Back");
+        panel.add(goBackButton);
+        Dimension size14 = goBackButton.getPreferredSize();
+        goBackButton.setBounds(200, 300, size14.width, size14.height);
 
         this.setSize(400, 400);
         this.setLocationRelativeTo(null);
