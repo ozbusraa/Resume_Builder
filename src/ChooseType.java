@@ -19,12 +19,17 @@ public class ChooseType extends JFrame {
         Dimension size = title.getPreferredSize();
         title.setBounds(140, 0, size.width, size.height);
 
-        JCheckBox masters = new JCheckBox("Masters Application");
+        JRadioButton masters = new JRadioButton("Masters Application");
         masters.setBounds(50,100, 150,25);
-        JCheckBox internship = new JCheckBox("Internship Application");
+        JRadioButton internship = new JRadioButton("Internship Application");
         internship.setBounds(50,125, 150,25);
-        JCheckBox job = new JCheckBox("Job Application");
+        JRadioButton job = new JRadioButton("Job Application");
         job.setBounds(50,150, 150,25);
+
+        ButtonGroup g = new ButtonGroup();
+        g.add(masters);
+        g.add(internship);
+        g.add(job);
 
         panel.add(masters);
         panel.add(internship);
