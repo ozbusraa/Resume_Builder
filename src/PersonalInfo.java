@@ -77,14 +77,23 @@ public class PersonalInfo extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                user.setName(inputName.getText());
-                user.setLastName(inputSurname.getText());
-                user.setTelNo(inputPhoneNumber.getText());
-                user.setAddress(inputAddress.getText());
-                user.setEmail(inputMail.getText());
+                if (inputName.getText().isEmpty()||inputSurname.getText().isEmpty()||inputPhoneNumber.getText().isEmpty()
+                        || inputAddress.getText().isEmpty()||inputMail.getText().isEmpty()){
+                    String message = "Please fill in al required fields to go to the next step";
+                    JOptionPane.showMessageDialog(null, message, "Error", JOptionPane.ERROR_MESSAGE);
+                }
 
-                new ChooseInfo(user).setVisible(true);
-                dispose();
+                else{
+                    user.setName(inputName.getText());
+                    user.setLastName(inputSurname.getText());
+                    user.setTelNo(inputPhoneNumber.getText());
+                    user.setAddress(inputAddress.getText());
+                    user.setEmail(inputMail.getText());
+
+                    new ChooseInfo(user).setVisible(true);
+                    dispose();
+                }
+
             }
         });
 

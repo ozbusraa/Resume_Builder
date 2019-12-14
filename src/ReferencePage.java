@@ -12,7 +12,7 @@ public class ReferencePage extends JFrame {
     public ReferencePage(UserInterface user, EducationInfo eI, WorkExperienceInfo j, SkillsInfo s, VolunteerInfo v, Project p, Certificates c, Reference r, Hobbies h, Boolean[] array){
         this.setVisible(array[7]);
         if(array[7]==Boolean.FALSE){
-            //new WorkExperiencePage(user,eI,j,s,v,p,c,r,h,array);}
+            new ChooseType(user,eI,j,s,v,p,c,r,h,array).setVisible(true);
         }
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -102,8 +102,10 @@ public class ReferencePage extends JFrame {
              r.setName(inputName.getText());
              r.setTelNo(inputTelNo.getText());
              r.setNextReferenceInfo(null);
-               // new SkillPage(user,eI,j,s,v,p,c,r,h,array);
-                dispose();
+             new ChooseType(user,eI,j,s,v,p,c,r,h,array).setVisible(true);
+             dispose();
+
+
             }
         });
 
