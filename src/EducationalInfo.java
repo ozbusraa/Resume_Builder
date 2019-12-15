@@ -139,13 +139,6 @@ public class EducationalInfo extends JFrame {
                 }
             });
 
-
-
-
-
-
-
-
         }
 
 

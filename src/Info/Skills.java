@@ -74,12 +74,12 @@ public class Skills implements SkillsInfo {
     @Override
     public void print_2(SkillsInfo skillsInfo, BufferedWriter writer) {
         String text ="<div class=\"content\">\n" +
-                "\t\t\t<span class=\"date\">Known Languages: "+skillsInfo.getLanguages()+" </span>\n" +
-                "\t\t\t<address>language</address>\t\t\t\n" +
-                "\t\t\t<span class=\"date\">Known Programs: "+skillsInfo.getProgramKnowledge()+"</span>\t\n" +
-                "\t\t\t<address>programs</address>\n" +
-                "\t\t\t<span class=\"date\">Others: "+skillsInfo.getOther()+"</span>\n" +
-                "\t\t\t<address>others</address>";
+                "\t\t\t<span class=\"date\">Known Languages:  </span>\n" +
+                "\t\t\t<address>"+skillsInfo.getLanguages()+"</address>\t\t\t\n" +
+                "\t\t\t<span class=\"date\">Known Programs: </span>\t\n" +
+                "\t\t\t<address>"+skillsInfo.getProgramKnowledge()+"</address>\n" +
+                "\t\t\t<span class=\"date\">Others: </span>\n" +
+                "\t\t\t<address>"+skillsInfo.getOther()+"</address>";
 
         write(writer,text);
     }
