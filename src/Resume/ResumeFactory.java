@@ -8,12 +8,15 @@ public class ResumeFactory {
       //  r.use();
     //}
     public Resume produceResume(String type){
-     if (type=="Internship")
-         return new ResumeForInternship();
-     else if (type=="Work")
+     if (type=="Internship"){
+         return new ResumeForInternship() ;
+     }
+     else if (type=="Work") {
          return new ResumeForWork();
-     else if (type=="Master")
+     }
+     else if (type=="Master"){
          return new ResumeForMasterAppl();
+     }
      else
          return null; // null object bilmem ne yapılabilir
     }

@@ -9,7 +9,7 @@ public class ReferencePage extends JFrame {
 
     private JPanel panel;
 
-    public ReferencePage(UserInterface user, EducationInfo eI, WorkExperienceInfo j, SkillsInfo s, VolunteerInfo v, Project p, Certificates c, Reference r, Hobbies h, Boolean[] array){
+    public ReferencePage(UserInterface user, EducationInfo eI, WorkExperienceInfo j, SkillsInfo s, VolunteerInfo v, Project p, Certificates c, Reference r, Reference firstr,Hobbies h, Boolean[] array){
         this.setVisible(array[7]);
         if(array[7]==Boolean.FALSE){
             new ChooseType(user,eI,j,s,v,p,c,r,h,array).setVisible(true);
@@ -102,7 +102,7 @@ public class ReferencePage extends JFrame {
              r.setName(inputName.getText());
              r.setTelNo(inputTelNo.getText());
              r.setNextReferenceInfo(null);
-             user.save();
+             user.setReference(firstr);
                // new SkillPage(user,eI,j,s,v,p,c,r,h,array);
              new ChooseType(user,eI,j,s,v,p,c,r,h,array).setVisible(true);
              dispose();
@@ -123,7 +123,7 @@ public class ReferencePage extends JFrame {
                 r.setTelNo(inputTelNo.getText());
                 r.setNextReferenceInfo(newR);
 
-                new ReferencePage(user,eI,j,s,v,p,c,newR,h,array);
+                new ReferencePage(user,eI,j,s,v,p,c,newR,firstr,h,array);
                 dispose();
             }
         });

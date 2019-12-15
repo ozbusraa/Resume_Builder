@@ -10,7 +10,7 @@ public class WorkExperiencePage extends JFrame {
 
     private JPanel panel;
 
-    public WorkExperiencePage(UserInterface user, EducationInfo eI, WorkExperienceInfo j, SkillsInfo s, VolunteerInfo v, Project p, Certificates c, Reference r, Hobbies h,Boolean[] array){
+    public WorkExperiencePage(UserInterface user, EducationInfo eI, WorkExperienceInfo j, WorkExperienceInfo firstj, SkillsInfo s, VolunteerInfo v, Project p, Certificates c, Reference r, Hobbies h,Boolean[] array){
         this.setVisible(array[1]);
         if(array[1]==Boolean.FALSE){new SkillPage(user,eI,j,s,v,p,c,r,h,array);}
 
@@ -115,6 +115,7 @@ public class WorkExperiencePage extends JFrame {
                 j.setDescription(inputDescription.getText());
                 j.setNextWorkExperience(null);
 
+                user.setWorkExperienceInfo(firstj);
                 new SkillPage(user,eI,j,s,v,p,c,r,h,array);
                 dispose();
             }
@@ -133,7 +134,7 @@ public class WorkExperiencePage extends JFrame {
                 j.setDescription(inputDescription.getText());
                 j.setNextWorkExperience(newJ);
 
-                new WorkExperiencePage(user,eI,newJ,s,v,p,c,r,h,array);
+                new WorkExperiencePage(user,eI,newJ,firstj,s,v,p,c,r,h,array);
                 dispose();
             }
         });

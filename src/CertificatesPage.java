@@ -8,10 +8,10 @@ import java.awt.event.ActionListener;
 public class CertificatesPage extends JFrame {
     private JPanel panel;
 
-    public CertificatesPage(UserInterface user, EducationInfo eI, WorkExperienceInfo j, SkillsInfo s, VolunteerInfo v, Project p, Certificates c, Reference r, Hobbies h, Boolean[] array){
+    public CertificatesPage(UserInterface user, EducationInfo eI, WorkExperienceInfo j, SkillsInfo s, VolunteerInfo v, Project p, Certificates c,Certificates firstc, Reference r, Hobbies h, Boolean[] array){
         this.setVisible(array[6]);
         if(array[6]==Boolean.FALSE){
-            new ReferencePage(user,eI,j,s,v,p,c,r,h,array);
+            new ReferencePage(user,eI,j,s,v,p,c,r,r,h,array);
         }
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JPanel panel = (JPanel) getContentPane();
@@ -75,8 +75,8 @@ public class CertificatesPage extends JFrame {
             c.setGivenOrganisation(inputInstitution.getText());
             c.setYear(inputDate.getText());
             c.setNextCertificate(null);
-
-                new ReferencePage(user,eI,j,s,v,p,c,r,h,array);
+            user.setCertificates(firstc);
+                new ReferencePage(user,eI,j,s,v,p,c,r,r,h,array);
                 dispose();
             }
         });
@@ -92,7 +92,7 @@ public class CertificatesPage extends JFrame {
                 c.setYear(inputDate.getText());
                 c.setNextCertificate(newC);
 
-                new CertificatesPage(user,eI,j,s,v,p,newC,r,h,array);
+                new CertificatesPage(user,eI,j,s,v,p,newC,firstc,r,h,array);
                 dispose();
             }
         });

@@ -1,5 +1,6 @@
 package Info;
 
+import java.io.BufferedWriter;
 import java.util.Date;
 
 public interface WorkExperienceInfo {
@@ -17,5 +18,15 @@ public interface WorkExperienceInfo {
     String getFinishDate();
     String getDescription();
     WorkExperienceInfo getNextWorkExperience();
+
+    void print_Header1(BufferedWriter writer);
+    void print_Header2(BufferedWriter writer);
+    void print_Closer2(BufferedWriter writer);
+    void print_Header3(BufferedWriter writer);
+    void print_Closer3(BufferedWriter writer);
+    void print_1(WorkExperienceInfo workExperienceInfo, BufferedWriter writer);
+    void print_2(WorkExperienceInfo workExperienceInfoo, BufferedWriter writer);
+    void print_3(WorkExperienceInfo workExperienceInfo, BufferedWriter writer);
+    void write(BufferedWriter writer,String text);
 
 }

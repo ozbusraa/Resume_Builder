@@ -1,5 +1,7 @@
 import javax.swing.*;
 import Info.*;
+import Resume.*;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,7 +11,7 @@ public class ChooseType extends JFrame {
     private JPanel panel;
 
     public ChooseType(UserInterface user, EducationInfo eI, WorkExperienceInfo j, SkillsInfo s, VolunteerInfo v, Project p, Certificates c, Reference r, Hobbies h, Boolean[] array){
-
+        user.save();
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JPanel panel = (JPanel) this.getContentPane();
         panel.setLayout(null);
@@ -61,20 +63,17 @@ public class ChooseType extends JFrame {
 
                 else{
                     if (masters.isSelected()){
-                        array[0] = Boolean.TRUE;
-                        user.setChoosenResumeType("master");
+                        user.setChoosenResumeType("Master");
                     }
                     else if (internship.isSelected()){
-                        array[1] = Boolean.TRUE;
-                        user.setChoosenResumeType("internship");
+                        user.setChoosenResumeType("Internship");
                     }
                     else if (job.isSelected()){
-                        array[2] = Boolean.TRUE;
-                        user.setChoosenResumeType("job");
+                        user.setChoosenResumeType("Work");
                     }
 
 
-                    new ChooseLayout(array).setVisible(true);
+                    new ChooseLayout(user).setVisible(true);
                     dispose();
 
                 }

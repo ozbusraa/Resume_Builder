@@ -9,12 +9,14 @@ public class EducationalInfo extends JFrame {
 
         private JPanel panel;
 
-        public EducationalInfo(UserInterface user, EducationInfo eI, WorkExperienceInfo j, SkillsInfo s, VolunteerInfo v, Project p, Certificates c, Reference r, Hobbies h, Boolean[] array){
+        public EducationalInfo(UserInterface user, EducationInfo eI,EducationInfo firsteI, WorkExperienceInfo j, SkillsInfo s, VolunteerInfo v, Project p, Certificates c, Reference r, Hobbies h, Boolean[] array){
             this.setVisible(array[0]);
-            if(array[0]==Boolean.FALSE){new WorkExperiencePage(user,eI,j,s,v,p,c,r,h,array);}
+            if(array[0]==Boolean.FALSE){new WorkExperiencePage(user,eI,j,j,s,v,p,c,r,h,array);}
             this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             JPanel panel = (JPanel) this.getContentPane();
             panel.setLayout(null);
+
+
 
             JLabel title = new JLabel("Educational Info");
             panel.add(title);
@@ -102,6 +104,7 @@ public class EducationalInfo extends JFrame {
           //  this.setVisible(true);
 
 
+
             saveButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
@@ -113,7 +116,8 @@ public class EducationalInfo extends JFrame {
                     eI.setGpa(inputGpa.getText());
                     eI.setNextEducationInfo(null);
 
-                    new WorkExperiencePage(user,eI,j,s,v,p,c,r,h,array);
+                    user.setEducationInfo(firsteI);
+                    new WorkExperiencePage(user,eI,j,j,s,v,p,c,r,h,array);
                     dispose();
                 }
             });
@@ -130,7 +134,7 @@ public class EducationalInfo extends JFrame {
                     eI.setGpa(inputGpa.getText());
                     eI.setNextEducationInfo(newEI);
 
-                    new EducationalInfo(user,newEI,j,s,v,p,c,r,h,array);
+                    new EducationalInfo(user,newEI,firsteI,j,s,v,p,c,r,h,array);
                     dispose();
                 }
             });

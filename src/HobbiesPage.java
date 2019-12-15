@@ -10,7 +10,7 @@ public class HobbiesPage extends JFrame {
 
     public HobbiesPage(UserInterface user, EducationInfo eI, WorkExperienceInfo j, SkillsInfo s, VolunteerInfo v, Project p, Certificates c, Reference r, Hobbies h, Boolean[] array){
         this.setVisible(array[4]);
-        if(array[4]==Boolean.FALSE){new VolunteerPage(user,eI,j,s,v,p,c,r,h,array);}
+        if(array[4]==Boolean.FALSE){new VolunteerPage(user,eI,j,s,v,v,p,c,r,h,array);}
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JPanel panel = (JPanel) getContentPane();
         panel.setLayout(null);
@@ -48,8 +48,8 @@ public class HobbiesPage extends JFrame {
             public void actionPerformed(ActionEvent e) {
 
                h.setHobbies(inputHobies.getText());
-
-                new VolunteerPage(user,eI,j,s,v,p,c,r,h,array);
+                user.setHobbies(h);
+                new VolunteerPage(user,eI,j,s,v,v,p,c,r,h,array);
                 dispose();
             }
         });

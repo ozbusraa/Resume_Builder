@@ -1,5 +1,7 @@
 package Info;
 
+import java.io.BufferedWriter;
+
 public interface EducationInfo {
 
         void setSchoolName(String highSchoolName);
@@ -11,17 +13,19 @@ public interface EducationInfo {
         void setNextEducationInfo(EducationInfo educationInfo);
 
         String getSchoolName() ;
-
         String getDepartment() ;
-
         String getStartDate() ;
-
         String getFinishDate() ;
-
         String getGpa() ;
-
         EducationInfo getNextEducationInfo();
 
-        void print_1(EducationInfo educationInfo);
-        void printEducationInfo_Header1();
+        void print_Header1(BufferedWriter writer);
+        void print_Header2(BufferedWriter writer);
+        void print_Closer2(BufferedWriter writer);
+        void print_Header3(BufferedWriter writer);
+        void print_Closer3(BufferedWriter writer);
+        void print_1(EducationInfo educationInfo, BufferedWriter writer);
+        void print_2(EducationInfo educationInfo, BufferedWriter writer);
+        void print_3(EducationInfo educationInfo, BufferedWriter writer);
+        void write(BufferedWriter writer,String text);
 }

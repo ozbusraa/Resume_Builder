@@ -9,10 +9,10 @@ public class VolunteerPage  extends JFrame {
 
     private JPanel panel;
 
-    public VolunteerPage(UserInterface user, EducationInfo eI, WorkExperienceInfo j, SkillsInfo s, VolunteerInfo v, Project p, Certificates c, Reference r, Hobbies h, Boolean[] array){
+    public VolunteerPage(UserInterface user, EducationInfo eI, WorkExperienceInfo j, SkillsInfo s, VolunteerInfo v,VolunteerInfo firstv, Project p, Certificates c, Reference r, Hobbies h, Boolean[] array){
         this.setVisible(array[5]);
         if(array[5]==Boolean.FALSE){
-            new CertificatesPage(user,eI,j,s,v,p,c,r,h,array);
+            new CertificatesPage(user,eI,j,s,v,p,c,c,r,h,array);
         }
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -75,8 +75,8 @@ public class VolunteerPage  extends JFrame {
                 v.setProjectName(inputProjectName.getText());
                 v.setDescription(inputDescription.getText());
                 v.setNextVolunteerInfo(null);
-
-                new CertificatesPage(user,eI,j,s,v,p,c,r,h,array);
+                user.setVolunteerInfo(firstv);
+                new CertificatesPage(user,eI,j,s,v,p,c,c,r,h,array);
                 dispose();
             }
         });
@@ -91,7 +91,7 @@ public class VolunteerPage  extends JFrame {
                 v.setDescription(inputDescription.getText());
                 v.setNextVolunteerInfo(null);
 
-                new VolunteerPage(user,eI,j,s,newV,p,c,r,h,array);
+                new VolunteerPage(user,eI,j,s,newV,firstv,p,c,r,h,array);
                 dispose();
             }
         });

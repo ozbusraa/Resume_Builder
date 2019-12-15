@@ -1,5 +1,7 @@
 package Info;
 
+import java.io.BufferedWriter;
+
 public class noSchoolInfo implements EducationInfo{
     String schoolName;
     String department;
@@ -38,36 +40,64 @@ public class noSchoolInfo implements EducationInfo{
     public String getSchoolName() {
         return null;
     }
-
     public String getDepartment() {
         return null;
     }
-
     public String getStartDate() {
         return startDate;
     }
-
     public String getFinishDate() {
         return finishDate;
     }
-
     public String getGpa() {
         return gpa;
     }
-
     public EducationInfo getNextEducationInfo() {
         return nextEducationInfo;
     }
 
-
     @Override
-    public void print_1(EducationInfo educationInfo) {
+    public void print_1(EducationInfo educationInfo, BufferedWriter writer) {
 
     }
 
     @Override
-    public void printEducationInfo_Header1() {
+    public void print_2(EducationInfo educationInfo, BufferedWriter writer) {
 
     }
 
+    @Override
+    public void print_3(EducationInfo educationInfo, BufferedWriter writer) {
+
+    }
+
+    @Override
+    public void write(BufferedWriter writer, String text) {
+
+    }
+
+    @Override
+    public void print_Header1(BufferedWriter writer) {
+
+    }
+
+    @Override
+    public void print_Header2(BufferedWriter writer) {
+
+    }
+
+    @Override
+    public void print_Closer2(BufferedWriter writer) {
+
+    }
+
+    @Override
+    public void print_Header3(BufferedWriter writer) {
+
+    }
+
+    @Override
+    public void print_Closer3(BufferedWriter writer) {
+
+    }
 }

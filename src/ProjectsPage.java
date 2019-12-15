@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 public class ProjectsPage extends JFrame{
     private JPanel panel;
 
-    public ProjectsPage(UserInterface user, EducationInfo eI, WorkExperienceInfo j, SkillsInfo s, VolunteerInfo v, Project p, Certificates c, Reference r, Hobbies h,Boolean[] array){
+    public ProjectsPage(UserInterface user, EducationInfo eI, WorkExperienceInfo j, SkillsInfo s, VolunteerInfo v, Project p,Project firstp, Certificates c, Reference r, Hobbies h,Boolean[] array){
         this.setVisible(array[3]);
         if(array[3]==Boolean.FALSE){new HobbiesPage(user,eI,j,s,v,p,c,r,h,array);}
 
@@ -63,6 +63,7 @@ public class ProjectsPage extends JFrame{
                 p.setDescription(inputDescription.getText());
                 p.setProjectName(inputName.getText());
                 p.setNextProject(null);
+                user.setProject(firstp);
                 new HobbiesPage(user,eI,j,s,v,p,c,r,h,array);
                 dispose();
             }
@@ -77,7 +78,7 @@ public class ProjectsPage extends JFrame{
                 p.setProjectName(inputName.getText());
                 p.setNextProject(newP);
 
-                new ProjectsPage(user,eI,j,s,v,newP,c,r,h,array);
+                new ProjectsPage(user,eI,j,s,v,newP,firstp,c,r,h,array);
                 dispose();
             }
         });

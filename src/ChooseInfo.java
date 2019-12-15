@@ -78,6 +78,7 @@ public class ChooseInfo extends JFrame {
 
                     }else{
                         eI=new noSchoolInfo();
+                        user.setEducationInfo(eI);
                         array[0] =Boolean.FALSE;
                     }
                     if(job.isSelected()){
@@ -85,6 +86,7 @@ public class ChooseInfo extends JFrame {
                         array[1] = Boolean.TRUE;
                     }else{
                         j=new noWorkExperienceInfo();
+                        user.setWorkExperienceInfo(j);
                         array[1] = Boolean.FALSE;
                     }
                     if(skills.isSelected()){
@@ -92,6 +94,7 @@ public class ChooseInfo extends JFrame {
                         array[2] = Boolean.TRUE;
                     }else{
                         s=new noSkillInfo();
+                        user.setSkillsInfo(s);
                         array[2] = Boolean.FALSE;
                     }
                     if(volunteer.isSelected()){
@@ -99,6 +102,7 @@ public class ChooseInfo extends JFrame {
                         array[5] = Boolean.TRUE;
                     }else{
                         v= new noVolunteerInfo();
+                        user.setVolunteerInfo(v);
                         array[5] = Boolean.FALSE;
                     }
                     if(projects.isSelected()){
@@ -106,6 +110,7 @@ public class ChooseInfo extends JFrame {
                         array[3] = Boolean.TRUE;
                     }else{
                         p= new noProjectInfo();
+                        user.setProject(p);
                         array[3] = Boolean.FALSE;
                     }
                     if(certificate.isSelected()){
@@ -113,6 +118,7 @@ public class ChooseInfo extends JFrame {
                         array[6] = Boolean.TRUE;
                     }else{
                         c=new noCertificateInfo();
+                        user.setCertificates(c);
                         array[6] = Boolean.FALSE;
                     }
                     if(reference.isSelected()){
@@ -120,6 +126,7 @@ public class ChooseInfo extends JFrame {
                         array[7] = Boolean.TRUE;
                     }else{
                         r=new noReferenceInfo();
+                        user.setReference(r);
                         array[7] = Boolean.FALSE;
                     }
                     if(hobbies.isSelected()){
@@ -127,10 +134,11 @@ public class ChooseInfo extends JFrame {
                         array[4] = Boolean.TRUE;
                     }else{
                         h=new noHobbyInfo();
+                        user.setHobbies(h);
                         array[4] = Boolean.FALSE;
                     }
 
-                    new EducationalInfo(user,eI,j,s,v,p,c,r,h,array);
+                    new EducationalInfo(user,eI,eI,j,s,v,p,c,r,h,array);
 
 
                     dispose();

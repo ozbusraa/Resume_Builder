@@ -11,7 +11,7 @@ public class SkillPage extends JFrame {
 
     public SkillPage(UserInterface user, EducationInfo eI, WorkExperienceInfo j, SkillsInfo s, VolunteerInfo v, Project p, Certificates c, Reference r, Hobbies h, Boolean[] array){
         this.setVisible(array[2]);
-        if(array[2]==Boolean.FALSE){new ProjectsPage(user,eI,j,s,v,p,c,r,h,array);}
+        if(array[2]==Boolean.FALSE){new ProjectsPage(user,eI,j,s,v,p,p,c,r,h,array);}
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JPanel panel = (JPanel) this.getContentPane();
@@ -81,8 +81,8 @@ public class SkillPage extends JFrame {
                 s.setLanguages(inputLanguage.getText());
                 s.setProgramKnowledge(inputProgram.getText());
                 s.setOther(inputOther.getText());
-
-                new ProjectsPage(user,eI,j,s,v,p,c,r,h,array);
+                user.setSkillsInfo(s);
+                new ProjectsPage(user,eI,j,s,v,p,p,c,r,h,array);
                 dispose();
             }
         });

@@ -1,5 +1,7 @@
 package Info;
 
+import java.io.BufferedWriter;
+
 public class noReferenceInfo implements Reference {
     String name="";
     String lastname="";
@@ -27,5 +29,45 @@ public class noReferenceInfo implements Reference {
     }
     public Reference getNextReferenceInfo() {
         return nextReferenceInfo;
+    }
+
+    @Override
+    public void print_Header1(BufferedWriter writer) {
+
+    }
+
+    @Override
+    public void print_Header2(BufferedWriter writer) {
+
+    }
+
+    @Override
+    public void print_Header3(BufferedWriter writer) {
+
+    }
+
+    @Override
+    public void print_Closer(BufferedWriter writer) {
+
+    }
+
+    @Override
+    public void print_1(Reference reference, BufferedWriter writer) {
+
+    }
+
+    @Override
+    public void print_2(Reference reference, BufferedWriter writer) {
+
+    }
+
+    @Override
+    public void print_3(Reference reference, BufferedWriter writer) {
+
+    }
+
+    @Override
+    public void write(BufferedWriter writer, String text) {
+
     }
 }

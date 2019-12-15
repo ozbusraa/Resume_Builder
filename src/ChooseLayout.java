@@ -1,11 +1,19 @@
+import Info.User;
+import Info.UserInterface;
+import Resume.*;
+import Resume.ResumeFactory;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class ChooseLayout extends JFrame {
 
-    public ChooseLayout(Boolean[] array){
+    public ChooseLayout(UserInterface user) {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JPanel panel = (JPanel) this.getContentPane();
         panel.setLayout(null);
@@ -17,13 +25,13 @@ public class ChooseLayout extends JFrame {
 
         JRadioButton first = new JRadioButton("1");
         Dimension size2 = first.getPreferredSize();
-        first.setBounds(25,250, size2.width,size2.height);
+        first.setBounds(25, 250, size2.width, size2.height);
         JRadioButton second = new JRadioButton("2");
         Dimension size3 = second.getPreferredSize();
-        second.setBounds(150,250, size3.width,size3.height);
+        second.setBounds(150, 250, size3.width, size3.height);
         JRadioButton third = new JRadioButton("3");
         Dimension size4 = third.getPreferredSize();
-        third.setBounds(275,250, size4.width,size4.height);
+        third.setBounds(275, 250, size4.width, size4.height);
 
         ButtonGroup g = new ButtonGroup();
         g.add(first);
@@ -34,7 +42,7 @@ public class ChooseLayout extends JFrame {
         panel.add(second);
         panel.add(third);
 
-        JButton saveButton = new JButton("Next");
+        JButton saveButton = new JButton("Create CV");
         panel.add(saveButton);
         Dimension size5 = saveButton.getPreferredSize();
         saveButton.setBounds(300, 300, size5.width, size5.height);
@@ -50,13 +58,44 @@ public class ChooseLayout extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                if (!first.isSelected()&&!second.isSelected()&&!third.isSelected()){
+                FileWriter fWriter = null;
+                try {
+                    fWriter = new FileWriter("CV.html");
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+                BufferedWriter writer = new BufferedWriter(fWriter);
+
+
+                ResumeFactory rf = new ResumeFactory();
+                Resume r = rf.produceResume(user.getChoosenResumeType());
+
+                Layout L = null;
+
+
+                if (!first.isSelected() && !second.isSelected() && !third.isSelected()) {
                     String message = "Select at least one to go to the next step";
                     JOptionPane.showMessageDialog(null, message, "Error", JOptionPane.ERROR_MESSAGE);
+                } else {
+                    if (first.isSelected()) {
+                        Layout  L1 = new Layout1();
+                        r.use(L1, user, writer);
+                    } else if (second.isSelected()) {
+                        Layout L2 = new Layout2();
+                        r.use(L2, user, writer);
+                    } else if (third.isSelected()) {
+                        Layout L3 = new Layout3();
+                        r.use(L3, user, writer);
+                    }
+                    try {
+                        writer.close();
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
+
                 }
+
                 dispose();
-
-
             }
         });
     }

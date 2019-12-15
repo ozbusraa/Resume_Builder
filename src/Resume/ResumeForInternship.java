@@ -1,17 +1,15 @@
 package Resume;
 
+import Info.User;
+import Info.UserInterface;
 import Resume.Resume;
 
-public class ResumeForInternship implements Resume {
+import java.io.BufferedWriter;
 
-
-    @Override
-    public void use() {
-        System.out.print("Internship");
-    }
+public  class ResumeForInternship implements Resume {
 
     @Override
-    public void putInfos() {
-
+    public void use(Layout l, UserInterface user, BufferedWriter writer) {
+        l.putInfosforInternship(user,writer);
     }
 }
