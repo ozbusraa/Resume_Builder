@@ -34,5 +34,41 @@ public class SchoolInfo implements EducationInfo{
         nextEducationInfo=educationInfo;
     }
 
+    public String getSchoolName() {
+        return schoolName;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public String getStartDate() {
+        return startDate;
+    }
+
+    public String getFinishDate() {
+        return finishDate;
+    }
+
+    public String getGpa() {
+        return gpa;
+    }
+
+    public EducationInfo getNextEducationInfo() {
+        return nextEducationInfo;
+    }
+
+    @Override
+    public void print_1(EducationInfo e) {
+
+        String text="<h2>Education</h2>	<ul>		<li>"+e.getSchoolName()+" ,"+e.getDepartment()+ " ,"+ e.getStartDate()+" - "+ e.getFinishDate()+" , "+ e.getGpa()+"</li>	</ul>";
+        System.out.println(text);
+    }
+
+    @Override
+    public void printEducationInfo_Header1() {
+        String header="<h2>Education</h2>";
+    }
+
 
 }

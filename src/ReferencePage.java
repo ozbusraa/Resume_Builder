@@ -73,7 +73,7 @@ public class ReferencePage extends JFrame {
 
 
 
-        JButton saveButton = new JButton("Next");
+        JButton saveButton = new JButton("Save");
         panel.add(saveButton);
         Dimension size7 = saveButton.getPreferredSize();
         saveButton.setBounds(300, 300, size7.width, size7.height);
@@ -102,6 +102,8 @@ public class ReferencePage extends JFrame {
              r.setName(inputName.getText());
              r.setTelNo(inputTelNo.getText());
              r.setNextReferenceInfo(null);
+             user.save();
+               // new SkillPage(user,eI,j,s,v,p,c,r,h,array);
              new ChooseType(user,eI,j,s,v,p,c,r,h,array).setVisible(true);
              dispose();
 

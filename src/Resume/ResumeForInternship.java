@@ -5,8 +5,6 @@ import Resume.Resume;
 public class ResumeForInternship implements Resume {
 
 
-
-
     @Override
     public void use() {
         System.out.print("Internship");

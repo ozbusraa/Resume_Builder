@@ -8,12 +8,24 @@ public class noReferenceInfo implements Reference {
     Reference nextReferenceInfo=null;
 
     public void setName(String name) {    }
-
     public void setLastname(String lastname) {    }
-
     public void setTelNo(String telNo) {    }
-
     public void setMailAddress(String mailAddress) {    }
-
     public void setNextReferenceInfo(Reference nextReferenceInfo) {    }
+
+    public String getName() {
+        return name;
+    }
+    public String getLastname() {
+        return lastname;
+    }
+    public String getTelNo() {
+        return telNo;
+    }
+    public String getMailAddress() {
+        return mailAddress;
+    }
+    public Reference getNextReferenceInfo() {
+        return nextReferenceInfo;
+    }
 }

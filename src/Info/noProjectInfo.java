@@ -7,8 +7,16 @@ public class noProjectInfo implements Project {
     Project nextProject=null;
 
     public void setProjectName(String projectName) { }
-
     public void setDescription(String description) { }
-
     public void setNextProject(Project nextProject) { }
+
+    public String getProjectName() {
+        return projectName;
+    }
+    public String getDescription() {
+        return description;
+    }
+    public Project getNextProject() {
+        return nextProject;
+    }
 }

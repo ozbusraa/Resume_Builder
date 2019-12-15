@@ -6,4 +6,8 @@ public class HobbiesInfo implements Hobbies {
     public void setHobbies(String hobbies) {
         this.hobbies = hobbies;
     }
+
+    public String getHobbies() {
+        return hobbies;
+    }
 }

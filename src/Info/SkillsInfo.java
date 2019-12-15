@@ -6,4 +6,8 @@ public interface SkillsInfo {
     void setProgramKnowledge(String programKnowledge) ;
     void setOther(String other);
 
+    String getLanguages();
+    String getProgramKnowledge();
+    String getOther();
+
 }

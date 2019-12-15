@@ -35,4 +35,39 @@ public class noSchoolInfo implements EducationInfo{
         //doNothing
     }
 
+    public String getSchoolName() {
+        return null;
+    }
+
+    public String getDepartment() {
+        return null;
+    }
+
+    public String getStartDate() {
+        return startDate;
+    }
+
+    public String getFinishDate() {
+        return finishDate;
+    }
+
+    public String getGpa() {
+        return gpa;
+    }
+
+    public EducationInfo getNextEducationInfo() {
+        return nextEducationInfo;
+    }
+
+
+    @Override
+    public void print_1(EducationInfo educationInfo) {
+
+    }
+
+    @Override
+    public void printEducationInfo_Header1() {
+
+    }
+
 }

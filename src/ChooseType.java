@@ -62,13 +62,17 @@ public class ChooseType extends JFrame {
                 else{
                     if (masters.isSelected()){
                         array[0] = Boolean.TRUE;
+                        user.setChoosenResumeType("master");
                     }
                     else if (internship.isSelected()){
                         array[1] = Boolean.TRUE;
+                        user.setChoosenResumeType("internship");
                     }
                     else if (job.isSelected()){
                         array[2] = Boolean.TRUE;
+                        user.setChoosenResumeType("job");
                     }
+
 
                     new ChooseLayout(array).setVisible(true);
                     dispose();

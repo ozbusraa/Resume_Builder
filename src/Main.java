@@ -43,7 +43,7 @@ public class Main {
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
 
-
+       // user.printEducationInfo1();
         //User user=new User();
         //UserInterface user=new ProxyUser();
 
@@ -62,9 +62,14 @@ public class Main {
                 VolunteerInfo w= new Volunteer();
 
         //Page 3: (Enter Education Info)
-
+            user.setEducationInfo(e);
             e.setSchoolName("Erbakır Fen Lisesi");
-
+e.setGpa("dsf");
+e.setStartDate("df");
+e.setFinishDate("sdf");
+e.setDepartment("sdf");
+user.save();
+        user.printEducationInfo1();
             //if press Add new
             EducationInfo u=new SchoolInfo();
             u.setSchoolName("sabanj");

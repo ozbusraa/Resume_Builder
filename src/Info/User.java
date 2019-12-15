@@ -11,6 +11,31 @@ public class User implements UserInterface {
     WorkExperienceInfo workExperienceInfo;
     SkillsInfo skillsInfo;
     VolunteerInfo volunteerInfo;
+    Hobbies hobbies;
+    Project project;
+    Certificates certificates;
+    Reference reference;
+
+    public void setHobbies(Hobbies hobbies) {
+        this.hobbies = hobbies;
+    }
+
+    public void setProject(Project project) {
+        this.project = project;
+    }
+
+    public void setCertificates(Certificates certificates) {
+        this.certificates = certificates;
+    }
+
+    public void setReference(Reference reference) {
+        this.reference = reference;
+    }
+
+
+    public void printEducationInfo1(){
+        educationInfo.print_1(educationInfo);
+    }
 
     public void setLastName(String lastName) {
         this.lastName = lastName;

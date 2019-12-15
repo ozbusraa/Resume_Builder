@@ -2,15 +2,11 @@ package Info;
 
 public interface UserInterface {
     //String choosenResumeType=null;
-    String name=null;
-    String lastName=null;
-    String email=null;
-    String telNo=null;
-    String address=null;
+
 
     void setChoosenResumeType(String choosenResumeType) ;
     void setName(String name);
-    void setLastName(String lastNamename);
+    void setLastName(String lastName);
     void setEmail(String email);
     void setTelNo(String telNo) ;
     void setAddress(String address);
@@ -20,7 +16,12 @@ public interface UserInterface {
     void setWorkExperienceInfo(WorkExperienceInfo workExperienceInfo);
     void setSkillsInfo(SkillsInfo skillsInfo);
     void setVolunteerInfo(VolunteerInfo volunteerInfo);
+    void setHobbies(Hobbies hobbies);
+    void setProject(Project project);
+    void setCertificates(Certificates certificates);
+    void setReference(Reference reference);
 
+    void printEducationInfo1();
     void save();
 
 }

@@ -11,10 +11,35 @@ public class ProxyUser implements UserInterface{
 
     private User user;
 
+    public void printEducationInfo1(){
+        user.save();
+        user.printEducationInfo1();
+    }
+
     EducationInfo educationInfo;
     WorkExperienceInfo workExperienceInfo;
     SkillsInfo skillsInfo;
     VolunteerInfo volunteerInfo;
+    Hobbies hobbies;
+    Project project;
+    Certificates certificates;
+    Reference reference;
+
+    public void setHobbies(Hobbies hobbies) {
+        this.hobbies = hobbies;
+    }
+
+    public void setProject(Project project) {
+        this.project = project;
+    }
+
+    public void setCertificates(Certificates certificates) {
+        this.certificates = certificates;
+    }
+
+    public void setReference(Reference reference) {
+        this.reference = reference;
+    }
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
@@ -24,6 +49,7 @@ public class ProxyUser implements UserInterface{
     @Override
     public void setChoosenResumeType(String choosenResumeType) {
         this.choosenResumeType = choosenResumeType;
+        user.setChoosenResumeType(choosenResumeType);
     }
     @Override
     public void setName(String name) {

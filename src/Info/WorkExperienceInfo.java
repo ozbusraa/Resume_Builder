@@ -11,4 +11,11 @@ public interface WorkExperienceInfo {
 
     void setNextWorkExperience(WorkExperienceInfo nextWorkExperince) ;
 
+    String getCompanyName();
+    String getPosition();
+    String getStartDate();
+    String getFinishDate();
+    String getDescription();
+    WorkExperienceInfo getNextWorkExperience();
+
 }

@@ -8,4 +8,9 @@ public interface Certificates {
     void setGivenOrganisation(String givenOrganisation);
 
     void setNextCertificate(Certificates nextCertificate);
+
+    String getCertificateName();
+    String getYear();
+    String getGivenOrganisation();
+    Certificates getNextCertificate();
 }
