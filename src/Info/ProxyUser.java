@@ -230,6 +230,7 @@ public class ProxyUser implements UserInterface{
         user=new User();
         user.setAddress(address);
         user.setName(name);
+        user.setLastName(lastName);
         user.setEmail(email);
         user.setTelNo(telNo);
         user.setEducationInfo(this.educationInfo);
