@@ -9,7 +9,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import javax.swing.*;
 
-import com.pdfcrowd.*;
 import java.io.*;
 
 public class Main {

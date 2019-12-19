@@ -87,6 +87,8 @@ public class ChooseLayout extends JFrame {
                         Layout L3 = new Layout3();
                         r.use(L3, user, writer);
                     }
+                    new Final().setVisible(true);
+                    dispose();
                     try {
                         writer.close();
                     } catch (IOException ex) {
