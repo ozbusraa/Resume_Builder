@@ -17,7 +17,7 @@ public class Final extends JFrame{
         Dimension size = title.getPreferredSize();
         title.setBounds(140, 50, size.width, size.height);
 
-        JLabel desc = new JLabel("You can access your CV from your files and convert it to PDf. ");
+        JLabel desc = new JLabel("     You can access your CV from your files and convert it to PDF ");
         panel.add(desc);
         Dimension a = desc.getPreferredSize();
         desc.setBounds(0, 100, a.width, a.height);

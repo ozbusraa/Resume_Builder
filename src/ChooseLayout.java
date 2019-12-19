@@ -3,13 +3,18 @@ import Info.UserInterface;
 import Resume.*;
 import Resume.ResumeFactory;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
+import java.io.File;
 import java.io.IOException;
+
+
 
 public class ChooseLayout extends JFrame {
 
@@ -21,17 +26,17 @@ public class ChooseLayout extends JFrame {
         JLabel title = new JLabel("Choose Layout");
         panel.add(title);
         Dimension size = title.getPreferredSize();
-        title.setBounds(140, 50, size.width, size.height);
+        title.setBounds(475, 0, size.width, size.height);
 
         JRadioButton first = new JRadioButton("1");
         Dimension size2 = first.getPreferredSize();
-        first.setBounds(25, 250, size2.width, size2.height);
+        first.setBounds(150, 475, size2.width, size2.height);
         JRadioButton second = new JRadioButton("2");
         Dimension size3 = second.getPreferredSize();
-        second.setBounds(150, 250, size3.width, size3.height);
+        second.setBounds(500, 475, size3.width, size3.height);
         JRadioButton third = new JRadioButton("3");
         Dimension size4 = third.getPreferredSize();
-        third.setBounds(275, 250, size4.width, size4.height);
+        third.setBounds(850, 475, size4.width, size4.height);
 
         ButtonGroup g = new ButtonGroup();
         g.add(first);
@@ -42,16 +47,30 @@ public class ChooseLayout extends JFrame {
         panel.add(second);
         panel.add(third);
 
+
+        ImageIcon layout1 = new ImageIcon("src/2.png");
+        JLabel label = new JLabel("", layout1, JLabel.CENTER);
+        label.setBounds(0, 60, 300, 400);
+        add(label);
+        ImageIcon layout2 = new ImageIcon("src/1.png");
+        JLabel label2 = new JLabel("", layout2, JLabel.CENTER);
+        label2.setBounds(350, 60, 300, 400);
+        add(label2);
+        ImageIcon layout3 = new ImageIcon("src/3.png");
+        JLabel label3 = new JLabel("", layout3, JLabel.CENTER);
+        label3.setBounds(700, 60, 300, 400);
+        add(label3);
+
         JButton saveButton = new JButton("Create CV");
         panel.add(saveButton);
         Dimension size5 = saveButton.getPreferredSize();
-        saveButton.setBounds(300, 300, size5.width, size5.height);
+        saveButton.setBounds(475, 510, size5.width, size5.height);
 
 //        JButton goBackButton = new JButton("Go Back");
 //        panel.add(goBackButton);
 //        Dimension size6 = goBackButton.getPreferredSize();
 //        goBackButton.setBounds(200, 300, size6.width, size6.height);
-        setSize(400, 400);
+        setSize(1100, 600);
         setLocationRelativeTo(null);
 
         saveButton.addActionListener(new ActionListener() {
@@ -96,9 +115,8 @@ public class ChooseLayout extends JFrame {
                     }
 
                 }
-
-                dispose();
             }
         });
     }
+
 }
