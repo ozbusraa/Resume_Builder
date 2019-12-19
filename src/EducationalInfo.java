@@ -60,7 +60,7 @@ public class EducationalInfo extends JFrame {
 
 
 
-            JLabel graduationDate = new JLabel("(Expected)Graduation Date:");
+            JLabel graduationDate = new JLabel("Graduation Date:");
             panel.add(graduationDate);
             Dimension size5 = graduationDate.getPreferredSize();
             graduationDate.setBounds(0, 200, size5.width, size5.height);
