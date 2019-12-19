@@ -43,10 +43,10 @@ public class ProjectsPage extends JFrame{
         Dimension size7 = buttonAddNew.getPreferredSize();
         buttonAddNew.setBounds(100, 300, size7.width, size7.height);
 
-        JButton goBackButton = new JButton("Go Back");
-        panel.add(goBackButton);
-        Dimension size14 = goBackButton.getPreferredSize();
-        goBackButton.setBounds(200, 300, size14.width, size14.height);
+//        JButton goBackButton = new JButton("Go Back");
+//        panel.add(goBackButton);
+//        Dimension size14 = goBackButton.getPreferredSize();
+//        goBackButton.setBounds(200, 300, size14.width, size14.height);
 
         add(title);
         add(name);

@@ -47,10 +47,10 @@ public class ChooseLayout extends JFrame {
         Dimension size5 = saveButton.getPreferredSize();
         saveButton.setBounds(300, 300, size5.width, size5.height);
 
-        JButton goBackButton = new JButton("Go Back");
-        panel.add(goBackButton);
-        Dimension size6 = goBackButton.getPreferredSize();
-        goBackButton.setBounds(200, 300, size6.width, size6.height);
+//        JButton goBackButton = new JButton("Go Back");
+//        panel.add(goBackButton);
+//        Dimension size6 = goBackButton.getPreferredSize();
+//        goBackButton.setBounds(200, 300, size6.width, size6.height);
         setSize(400, 400);
         setLocationRelativeTo(null);
 

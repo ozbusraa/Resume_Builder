@@ -26,7 +26,7 @@ public class Main {
         panel.add(title);
         Dimension size = title.getPreferredSize();
         title.setBounds(140, 0, size.width, size.height);
-        JLabel getStarted = new JLabel("Get Started");
+        JLabel getStarted = new JLabel("Welcome :)");
         panel.add(getStarted);
         Dimension size1 = title.getPreferredSize();
         getStarted.setBounds(150, 150, size1.width, size1.height);

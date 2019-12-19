@@ -42,10 +42,10 @@ public class ChooseType extends JFrame {
         Dimension size1 = saveButton.getPreferredSize();
         saveButton.setBounds(300, 300, size1.width, size1.height);
 
-        JButton goBackButton = new JButton("Go Back");
-        panel.add(goBackButton);
-        Dimension size2 = goBackButton.getPreferredSize();
-        goBackButton.setBounds(200, 300, size2.width, size2.height);
+//        JButton goBackButton = new JButton("Go Back");
+//        panel.add(goBackButton);
+//        Dimension size2 = goBackButton.getPreferredSize();
+//        goBackButton.setBounds(200, 300, size2.width, size2.height);
 
         setSize(400, 400);
         setLocationRelativeTo(null);

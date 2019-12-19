@@ -52,10 +52,10 @@ public class CertificatesPage extends JFrame {
         Dimension size9 = buttonAddNew.getPreferredSize();
         buttonAddNew.setBounds(100, 300, size9.width, size9.height);
 
-        JButton goBackButton = new JButton("Go Back");
-        panel.add(goBackButton);
-        Dimension size14 = goBackButton.getPreferredSize();
-        goBackButton.setBounds(200, 300, size14.width, size14.height);
+//        JButton goBackButton = new JButton("Go Back");
+//        panel.add(goBackButton);
+//        Dimension size14 = goBackButton.getPreferredSize();
+//        goBackButton.setBounds(200, 300, size14.width, size14.height);
 
         add(title);
         add(name);
